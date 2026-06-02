@@ -1,0 +1,48 @@
+version: 2
+
+sources:
+  - name: bronze
+    schema: main
+    description: "Raw data ingested from football APIs — never modified after landing."
+    tables:
+      - name: matches
+        description: "Raw Premier League match data from football-data.org"
+        columns:
+          - name: id
+            description: "Match unique identifier"
+            tests:
+              - not_null
+              - unique
+
+      - name: scorers
+        description: "Top 50 Premier League scorers from football-data.org"
+        columns:
+          - name: player__id
+            description: "Player unique identifier"
+            tests:
+              - not_null
+
+      - name: standings
+        description: "Premier League final standings from football-data.org"
+        columns:
+          - name: team__id
+            description: "Team unique identifier"
+            tests:
+              - not_null
+              - unique
+
+      - name: squads
+        description: "Full squad per team from football-data.org"
+        columns:
+          - name: id
+            description: "Team unique identifier"
+            tests:
+              - not_null
+
+      - name: player_stats
+        description: "Top scorer and assist player stats from API-Football"
+        columns:
+          - name: player__id
+            description: "Player unique identifier"
+            tests:
+              - not_null

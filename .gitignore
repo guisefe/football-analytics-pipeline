@@ -7,17 +7,21 @@ __pycache__/
 *.pyo
 .pytest_cache/
 *.egg-info/
+.venv/
+venv/
 
-# DuckDB
+# DuckDB — generated at runtime, never committed
 *.duckdb
 *.duckdb.wal
+data/
 
-# dbt
+# dbt — generated artifacts
 dbt/target/
 dbt/dbt_packages/
 dbt/logs/
+dbt/.user.yml
 
-# Airflow
+# Airflow — generated at runtime
 logs/
 airflow.db
 airflow.cfg
@@ -25,3 +29,4 @@ standalone_admin_password.txt
 
 # OS
 .DS_Store
+Thumbs.db

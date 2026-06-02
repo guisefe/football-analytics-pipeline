@@ -1,0 +1,13 @@
+football_analytics:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "{{ env_var('DUCKDB_PATH', '/opt/airflow/data/warehouse.duckdb') }}"
+      schema: main
+      threads: 4
+    prod:
+      type: duckdb
+      path: "{{ env_var('DUCKDB_PATH', '/opt/airflow/data/warehouse.duckdb') }}"
+      schema: main
+      threads: 4
